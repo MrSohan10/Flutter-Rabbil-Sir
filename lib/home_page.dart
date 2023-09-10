@@ -1,28 +1,40 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  @override
+  int _selectedIndex = 0;
 
   mySnackbar(message, context) {
     return ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Floating Action Button"),
+        title: Text("Bottom tab var"),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          mySnackbar("i'm floating action button", context);
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        iconSize: 30,
+        backgroundColor: Colors.green,
+        selectedItemColor: Colors.amber,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Message'),
+          BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Call'),
+        ],
+        onTap: (int index) {
+          if (index == 0) {
+            mySnackbar("Sohan", context);
+          }
+          if (index == 1) {
+            mySnackbar("rabby", context);
+          }
+          if (index == 2) {
+            mySnackbar("Sabbir", context);
+          }
         },
-        child: Icon(Icons.add),
-        splashColor: Colors.redAccent,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-        elevation: 20,
       ),
     );
   }
