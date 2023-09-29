@@ -10,74 +10,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('SingleChild ScroolView'),
+            title: Text('SingleChild ScrollView'),
           ),
-          body: SingleChildScrollView(
-            
-            child: Column(
-              children: [
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.green,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.black,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.green,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.black,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.green,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.black,
-                ),
-              ],
-            ),
+          body: Column(
+            children: [
+              Expanded(
+                flex: 3,
+                  child: Container(
+                color: Colors.red,
+              )),
+              Expanded(
+                flex: 2,
+                  child: Container(
+                color: Colors.green,
+              )),
+              Expanded(
+                flex: 3,
+                  child: Container(
+                color: Colors.blue,
+              )),
+                   Expanded(
+                    flex: 2,
+                  child: Container(
+                color: Colors.black,
+              )),
+              
+            ],
           )),
     );
   }
