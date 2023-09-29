@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rabbil_sir/Contact.dart';
+import 'package:flutter_rabbil_sir/Message.dart';
 import 'package:flutter_rabbil_sir/home_page.dart';
 
-class Message extends StatelessWidget {
+class Contact extends StatelessWidget {
   String msg;
-   Message(
+   Contact(
        this.msg,
        {super.key}
        );
@@ -13,7 +13,7 @@ class Message extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Message"),
+        title: Text("Contact"),
       ),
       body: Center(
         child: Column(
@@ -27,13 +27,12 @@ class Message extends StatelessWidget {
               child: Text('Home'),
             ),
             ElevatedButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact('message to contact')));
-              },
-              child: Text('Contact'),
+              onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Message('contact to message')));},
+              child: Text('Message'),
             ),
           ],
         ),
+
       ),
     );
   }
